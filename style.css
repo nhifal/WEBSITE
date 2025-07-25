@@ -1,0 +1,775 @@
+/* Styling Umum & Reset Dasar untuk Responsif */
+body {
+    font-family: 'Orbitron', sans-serif; /* Font futuristik */
+    margin: 0;
+    line-height: 1.6;
+    color: #00FF00; /* Hijau neon */
+    background-color: #1a1a1a; /* Background sangat gelap */
+    font-size: 16px;
+    overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Efek Glitch untuk Judul */
+.glitch {
+    position: relative;
+    color: #00FF00; /* Hijau neon */
+    font-size: 4em;
+    font-weight: 700;
+    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px #00FF00;
+    animation: glitch 1.5s infinite alternate linear;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00; }
+    20% { transform: translate(-2px, 2px); text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF; }
+    40% { transform: translate(-2px, -2px); text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF; }
+    60% { transform: translate(2px, 2px); text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00; }
+    80% { transform: translate(2px, -2px); text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF; }
+    100% { transform: translate(0); text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00; }
+}
+
+.subtitle {
+    font-family: 'Major Mono Display', monospace;
+    color: #00FFFF; /* Cyan */
+    font-size: 1.1em;
+    margin-top: 10px;
+    text-align: center; /* Tambahkan ini */
+}
+
+/* Tombol dengan Efek Glow */
+.button-primary {
+    background-color: #00BFFF; /* Deep sky blue */
+    color: #1a1a1a; /* Teks gelap di tombol terang */
+    padding: 15px 35px;
+    border: 2px solid #00BFFF;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.5); /* Shadow default */
+}
+
+.glow-btn:hover {
+    background-color: #00FFFF; /* Lebih terang saat hover */
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.6); /* Efek glow lebih kuat */
+    transform: translateY(-3px);
+}
+
+.button-secondary {
+    background-color: #6a0dad; /* Ungu gelap */
+    color: #00FFFF;
+    padding: 10px 20px;
+    border: 1px solid #6a0dad;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(106, 13, 173, 0.5);
+}
+
+.glow-btn-secondary:hover {
+    background-color: #9932CC; /* Ungu terang */
+    box-shadow: 0 0 15px rgba(153, 50, 204, 0.8);
+    transform: translateY(-2px);
+}
+
+h1, h2, h3 {
+    color: #00FF00; /* Hijau neon */
+    line-height: 1.2;
+    text-shadow: 0 0 5px #00FF00; /* Sedikit glow untuk judul */
+}
+h1 { font-family: 'Bebas Neue', cursive; } /* Font untuk h1 */
+
+
+/* Header Portofolio */
+.portfolio-header {
+    background: linear-gradient(to right, #000000, #2c003e, #000000); /* Gradient gelap */
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    border-bottom: 2px solid #00FFFF; /* Garis bawah cyan */
+}
+
+.portfolio-header p {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #00FFFF;
+}
+
+/* Bagian Konten Utama */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+section {
+    background-color: #2b2b2b; /* Abu-abu gelap untuk seksi */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+    border: 1px solid #3a3a3a; /* Border tipis */
+    position: relative; /* Untuk efek border */
+    overflow: hidden; /* Untuk efek garis */
+}
+
+/* Efek Border untuk Section */
+.border-effect::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 8px;
+    padding: 2px; /* Lebar border virtual */
+    background: linear-gradient(45deg, #00FFFF, #FF00FF); /* Gradient warna border */
+/* Pastikan ini ada di bagian awal CSS Anda */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* ... CSS Anda yang lain ... */
+
+/* Efek Border untuk Section (class="border-effect") */
+/* Ini adalah perbaikan utama untuk masalah -webkit-mask */
+.border-effect {
+    position: relative; /* Penting untuk pseudo-elemen */
+    overflow: hidden; /* Penting agar shadow/outline tidak keluar */
+    border: 1px solid #3a3a3a; /* Border dasar */
+    border-radius: 8px; /* Border radius sesuai desain */
+    /* Tambahkan transisi untuk efek hover yang halus */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.border-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px; /* Sesuaikan dengan radius parent */
+    pointer-events: none; /* Penting agar tidak menghalangi interaksi */
+    
+    /* Teknik untuk membuat border glow yang konsisten */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), /* Glow pertama (cyan) */
+                0 0 25px rgba(255, 0, 255, 0.3) inset; /* Glow kedua (magenta) - opsional, bisa diatur */
+    
+    opacity: 0; /* Mulai tersembunyi */
+    transition: opacity 0.3s ease;
+    z-index: 1; /* Pastikan di atas konten tapi di bawah border asli */
+}
+
+.border-effect:hover::before {
+    opacity: 1; /* Tampilkan saat hover */
+}
+
+/* Untuk efek yang Anda inginkan, Anda juga bisa menggunakan outline */
+.border-effect:hover {
+    border-color: #00FFFF; /* Ubah warna border saat hover */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Tambahkan shadow ke elemen utama */
+    outline: 2px solid #FF00FF; /* Outline tambahan di luar border */
+    outline-offset: 3px; /* Jarak outline dari elemen */
+}
+
+
+/* ... CSS Anda untuk game container ... */
+
+/* Efek Dark Border Glow untuk Game Container (class="dark-border-glow") */
+/* Ini adalah perbaikan utama untuk masalah -webkit-mask */
+.dark-border-glow {
+    position: relative; /* Penting untuk pseudo-elemen */
+    overflow: hidden; /* Pastikan glow tidak meluber */
+    border: 2px solid #00FF00; /* Border hijau neon */
+    border-radius: 15px; /* Radius sesuai desain */
+    box-shadow: 0 8px 30px rgba(0, 255, 0, 0.3); /* Glow utama hijau */
+}
+
+.dark-border-glow::before {
+    content: '';
+    position: absolute;
+    top: -5px; bottom: -5px; left: -5px; right: -5px; /* Beri sedikit jarak */
+    background: linear-gradient(45deg, #00FF00, #00FFFF, #FF00FF, #00FF00); /* Gradient warna */
+    background-size: 400% 400%;
+    animation: glowing-border 10s infinite alternate linear;
+    border-radius: 18px; /* Sesuaikan dengan radius parent + jarak */
+    z-index: -1; /* Pastikan di belakang elemen utama */
+    filter: blur(8px); /* Efek blur untuk glow yang lebih lembut */
+    opacity: 0.7; /* Sedikit transparan */
+}
+
+@keyframes glowing-border {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* ... Sisa CSS Anda untuk .game-container dan elemen game lainnya ... */
+            mask-composite: exclude;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    opacity: 0.1; /* Mulai transparan */
+}
+
+.border-effect:hover::before {
+    opacity: 0.5; /* Lebih terlihat saat hover */
+}
+
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #00FF00;
+    font-size: 2.2em;
+    text-shadow: 0 0 8px #00FF00; /* Glow lebih kuat */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Bagian Intro & Manfaat */
+.section-intro p {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #CCC; /* Teks lebih terang */
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.benefit-item {
+    text-align: center;
+    padding: 25px;
+    background-color: #3a3a3a; /* Lebih gelap dari section */
+    border: 1px solid #00FFFF; /* Border cerah */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2); /* Efek glow halus */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Glow lebih kuat saat hover */
+}
+
+.benefit-item h3 {
+    color: #FF00FF; /* Magenta */
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    text-shadow: none; /* Hilangkan shadow default h3 */
+}
+.benefit-item p {
+    color: #AAA; /* Teks abu-abu terang */
+}
+
+
+/* Layanan */
+.section-services ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.section-services li {
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-left: 5px solid #00FF00; /* Garis hijau neon */
+    border-radius: 5px;
+    color: #CCC;
+    box-shadow: 0 0 8px rgba(0,255,0,0.1);
+    transition: background-color 0.3s ease;
+}
+
+.section-services li:hover {
+    background-color: #4a4a4a;
+}
+
+.section-services li strong {
+    color: #00FFFF; /* Cyan */
+}
+
+/* Riwayat Proyek / Portofolio History */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-item {
+    background-color: #3a3a3a;
+    border: 1px solid #FF00FF; /* Border magenta */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.6); /* Glow lebih kuat saat hover */
+}
+
+.project-item img {
+    width: 100%;
+    height: 220px; /* Tinggi gambar sedikit lebih tinggi */
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #00FFFF; /* Garis bawah gambar */
+}
+
+.project-item h3 {
+    font-size: 1.5em;
+    color: #00FF00;
+    margin: 0 15px 10px;
+    text-shadow: none;
+}
+
+.project-item p {
+    font-size: 0.95em;
+    color: #AAA;
+    padding: 0 15px;
+    flex-grow: 1;
+}
+
+.portfolio-note {
+    font-family: 'Major Mono Display', monospace;
+    font-style: italic;
+    color: #00FFFF;
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+
+/* Demo Game Section */
+.section-demo .game-container {
+    margin: 40px auto;
+    background-color: #1a1a1a; /* Background sangat gelap untuk game */
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 255, 0, 0.3); /* Glow hijau kuat */
+    border: 2px solid #00FF00; /* Border hijau neon */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek Dark Border Glow untuk Game Container */
+.dark-border-glow::before {
+    content: '';
+    position: absolute;
+    top: -5px; bottom: -5px; left: -5px; right: -5px;
+    background: linear-gradient(45deg, #00FF00, #00FFFF, #FF00FF, #00FF00); /* Gradient warna */
+    background-size: 400% 400%;
+    animation: glowing-border 10s infinite alternate linear;
+    border-radius: 18px;
+    z-index: -1;
+}
+
+@keyframes glowing-border {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.game-container h1 {
+    color: #FF00FF; /* Magenta */
+    font-size: 2.5em;
+    text-shadow: 0 0 10px #FF00FF;
+    letter-spacing: 2px;
+}
+
+.game-container p {
+    color: #00FFFF;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 1em;
+}
+
+.slot-machine {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    height: 600px;
+    overflow: hidden;
+    background-color: #000; /* Background reel sangat gelap */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: inset 0 0 20px rgba(0, 255, 0, 0.4), 0 0 15px rgba(0, 255, 0, 0.3); /* Glow di dalam reel */
+    position: relative;
+}
+
+/* Garis penunjuk di tengah untuk baris kemenangan */
+.slot-machine::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(50% - 1.5px);
+    height: 3px;
+    background-color: #FF00FF; /* Magenta */
+    z-index: 10;
+    box-shadow: 0 0 15px #FF00FF; /* Glow magenta */
+}
+
+.reel {
+    width: 150px;
+    height: 100%;
+    background-color: #0d0d0d; /* Background reel item */
+    border: 2px solid #00FFFF; /* Border reel cyan */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2); /* Glow dalam reel item */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    transition: transform 0.5s ease-out;
+}
+
+.reel-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    will-change: transform;
+}
+
+.fruit-icon {
+    width: 150px;
+    height: 120px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5em; /* Simbol lebih besar */
+    font-weight: bold;
+    color: #FFF; /* Warna simbol */
+    border-bottom: 1px solid rgba(0, 255, 0, 0.1); /* Garis pemisah hijau transparan */
+    text-shadow: 0 0 5px #FFF, 0 0 10px rgba(0,255,0,0.5); /* Glow pada simbol */
+}
+
+/* Placeholder styles for fruit icons (menggunakan background-color dengan sentuhan glow) */
+.fruit-0 { background-color: #5C0000; box-shadow: inset 0 0 10px #FF0000; } /* Merah Gelap */
+.fruit-1 { background-color: #005C00; box-shadow: inset 0 0 10px #00FF00; } /* Hijau Gelap */
+.fruit-2 { background-color: #00005C; box-shadow: inset 0 0 10px #0000FF; } /* Biru Gelap */
+.fruit-3 { background-color: #5C005C; box-shadow: inset 0 0 10px #FF00FF; } /* Ungu Gelap */
+.fruit-4 { background-color: #5C5C00; box-shadow: inset 0 0 10px #FFFF00; } /* Kuning Gelap */
+.fruit-5 { background-color: #005C5C; box-shadow: inset 0 0 10px #00FFFF; } /* Cyan Gelap */
+.fruit-6 { background-color: #5C2B00; box-shadow: inset 0 0 10px #FFA500; } /* Oranye Gelap */
+
+#spinButton {
+    background-color: #FF00FF; /* Magenta */
+    color: #000;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+}
+
+#spinButton:hover {
+    background-color: #00FFFF;
+    color: #000;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8), 0 0 40px rgba(0, 255, 255, 0.6);
+    transform: translateY(-3px);
+}
+
+#spinButton:disabled {
+    background-color: #444;
+    cursor: not-allowed;
+    box-shadow: none;
+    color: #888;
+}
+
+.score-display {
+    margin-top: 25px;
+    font-size: 1.5em;
+    color: #00FF00;
+    font-weight: bold;
+    text-shadow: 0 0 5px #00FF00;
+}
+
+#score {
+    color: #FF00FF;
+}
+
+.message-display {
+    margin-top: 20px;
+    font-size: 1.3em;
+    min-height: 30px;
+    font-weight: bold;
+    color: #00FFFF;
+    text-shadow: 0 0 5px #00FFFF;
+}
+
+.message-display.win { /* Class untuk pesan kemenangan */
+    color: #00FF00;
+    text-shadow: 0 0 10px #00FF00;
+}
+.message-display.lose { /* Class untuk pesan kalah */
+    color: #FF0000;
+    text-shadow: 0 0 10px #FF0000;
+}
+
+.section-demo {
+    text-align: center; /* Pastikan section ini rata tengah secara keseluruhan */
+}
+.demo-caption {
+    font-family: 'Major Mono Display', monospace;
+    font-style: italic;
+    color: #00FFFF;
+    margin-top: 20px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.section-contact {
+    text-align: center; /* Pastikan section ini rata tengah secara keseluruhan */
+} 
+
+/* Kontak */
+.section-contact p {
+    margin-bottom: 20px;
+    color: #CCC;
+    text-align: center;
+}
+.contact-info {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 1.1em;
+    color: #FF00FF;
+    text-shadow: 0 0 5px #FF00FF;
+    text-align: center;
+}
+
+/* Footer */
+.portfolio-footer {
+    background-color: #0d0d0d; /* Lebih gelap dari body */
+    color: #666; /* Teks abu-abu gelap */
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #00FFFF; /* Garis atas cyan */
+}
+
+
+/* --- MEDIA QUERIES UNTUK LAYAR TABLET (max-width: 768px) --- */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+    .glitch {
+        font-size: 3em;
+    }
+    .subtitle {
+        font-size: 1em;
+    }
+    .button-primary {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+    main {
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+    section {
+        padding: 30px;
+        margin-bottom: 25px;
+    }
+    .section-title {
+        font-size: 2em;
+    }
+    .benefits-grid,
+    .section-services ul,
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    .benefit-item, .section-services li, .project-item {
+        padding: 20px;
+    }
+    .project-item img {
+        height: 180px;
+    }
+
+    /* Game Slot di Tablet */
+    .section-demo .game-container {
+        width: 650px; /* Contoh lebar spesifik untuk tablet */
+        max-width: 95%;
+        padding: 25px;
+    }
+    .game-container h1 {
+        font-size: 2em;
+    }
+    .slot-machine {
+        gap: 8px;
+    }
+    .reel {
+        width: 100px;
+    }
+    .fruit-icon {
+        width: 100px;
+        height: 100px; /* Sesuaikan agar 5 baris tetap terlihat jika reel 500px */
+        font-size: 2.5em;
+    }
+    #spinButton {
+        padding: 12px 30px;
+        font-size: 1.1em;
+    }
+    .score-display, .message-display {
+        font-size: 1.3em;
+    }
+}
+
+
+/* ... (kode CSS Anda sebelumnya di atas ini) ... */
+
+/* --- MEDIA QUERIES UNTUK LAYAR MOBILE (max-width: 480px) --- */
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+    .glitch {
+        font-size: 2.2em;
+        text-shadow: 0 0 3px #00FF00, 0 0 6px #00FF00;
+    }
+    @keyframes glitch {
+        0% { transform: translate(0); text-shadow: 0 0 3px #00FF00; }
+        20% { transform: translate(-1px, 1px); text-shadow: 0 0 3px #FF00FF; }
+        40% { transform: translate(-1px, -1px); text-shadow: 0 0 3px #00FFFF; }
+        60% { transform: translate(1px, 1px); text-shadow: 0 0 3px #00FF00; }
+        80% { transform: translate(1px, -1px); text-shadow: 0 0 3px #FF00FF; }
+        100% { transform: translate(0); text-shadow: 0 0 3px #00FF00; }
+    }
+    .subtitle {
+        font-size: 0.9em;
+    }
+    .button-primary {
+        padding: 10px 25px;
+        font-size: 0.9em;
+    }
+    main {
+        margin: 15px auto;
+        padding: 0 10px;
+    }
+    section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .section-title {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+    }
+
+    .benefits-grid,
+    .section-services ul,
+    .project-grid {
+        grid-template-columns: 1fr; /* Satu kolom untuk mobile */
+        gap: 15px;
+    }
+    .benefit-item, .section-services li, .project-item {
+        padding: 15px;
+        margin-bottom: 0;
+    }
+    .project-item img {
+        height: 160px;
+    }
+    .project-item h3 {
+        font-size: 1.2em;
+    }
+    .project-item p {
+        font-size: 0.85em;
+    }
+    .portfolio-note {
+        font-size: 0.8em;
+    }
+
+    /* --- PERBAIKAN GAME SLOT UNTUK MOBILE --- */
+    .section-demo .game-container {
+        width: auto;
+        max-width: 98%;
+        padding: 15px 10px; /* Kurangi padding horizontal */
+        box-shadow: 0 5px 15px rgba(0, 255, 0, 0.2);
+    }
+    .game-container h1 {
+        font-size: 1.6em; /* Sedikit lebih kecil */
+    }
+    .game-container p {
+        font-size: 0.8em; /* Kurangi ukuran font instruksi */
+    }
+
+    .slot-machine {
+        /* Kembalikan ke flex-direction: row untuk tampilan horizontal */
+        flex-direction: row;
+        flex-wrap: nowrap; /* Penting: cegah wrapping ke baris baru */
+        justify-content: center;
+        gap: 2px; /* Jarak antar gulungan sangat kecil */
+        height: 300px; /* Tinggi total mesin untuk menampung 5 baris */
+        padding: 5px 0; /* Kurangi padding horizontal */
+        box-shadow: inset 0 0 8px rgba(0, 255, 255, 0.2), 0 0 8px rgba(0, 255, 0, 0.2);
+        overflow: hidden; /* Pastikan konten yang meluber tersembunyi */
+        border-width: 1px; /* Perkecil border */
+    }
+
+    .reel {
+        /* Hitung ulang lebar reel agar 6 reel muat di layar mobile */
+        /* Total 6 reel, masing-masing (lebar + 2*border + gap) */
+        /* Misal 6 * (45px + 2*1px + 2px) = 6 * 50px = 300px */
+        width: 45px; /* Lebar reel sangat kecil */
+        height: 100%; /* Tinggi reel mengikuti parent */
+        border-width: 1px;
+        border-radius: 3px; /* Radius lebih kecil */
+        box-shadow: inset 0 0 5px rgba(0, 255, 255, 0.1);
+    }
+
+    .fruit-icon {
+        width: 45px; /* Ikon buah mengikuti lebar reel */
+        height: 60px; /* Tinggi ikon buah (300px / 5 baris = 60px) */
+        font-size: 1.8em; /* Ukuran simbol tetap proporsional */
+        text-shadow: 0 0 3px #FFF, 0 0 5px rgba(0,255,0,0.3); /* Kurangi glow simbol */
+    }
+
+    /* Tetap sembunyikan garis kemenangan di mobile jika terlihat terlalu ramai */
+    .slot-machine::before {
+        display: none;
+    }
+
+    #spinButton {
+        padding: 8px 20px; /* Lebih kecil lagi */
+        font-size: 0.85em; /* Lebih kecil lagi */
+    }
+    .score-display, .message-display {
+        font-size: 1em;
+    }
+    .demo-caption {
+        font-size: 0.75em;
+    }
+    .contact-info {
+        font-size: 0.9em;
+    }
+    .portfolio-footer {
+        padding: 10px;
+        font-size: 0.7em;
+    }
+}
